@@ -1,0 +1,26 @@
+body {
+    width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    repeat:no-repeat;
+}
+
+/*==== mediaQueries ====*/
+@media all and (max-width: 1200px) {
+    body {
+            width: calc(100% - 30px);
+    }
+}
+@media all and (max-width: 992px) {
+
+}
+@media all and (max-width: 768px) {
+
+}
+
+
+
+.navbar-toggler-right {
+
+}

@@ -1,0 +1,16 @@
+## ----- BEGINING OF APACHE VELOCITY TEMPLATE ----------- 
+
+#if ($node.getErrorDescription()!="") Error Occurred : $node.getErrorDescription() #else
+
+#foreach($child in $node.getChildren())
+	
+	#if ($child.getChildren()) <li> #else <li class="last"> #end  #if ($child.getChildren()) <a href="#" onclick="toggle('$child.getNodeId()')"> #end $child.getNodefName() $child.getNodemName() $child.getNodelName() #if ($child.getChildren()) </a> #end #if($child.getIsSelected()==0)<input type="checkbox" name="$child.getNodefName() $child.getNodemName() $child.getNodelName()"/> #else <input type="checkbox" name="$child.getNodefName() $child.getNodemName() $child.getNodelName()" checked="checked" /> #end
+	#if ( $child.getChildren() )	
+		<ul id="$child.getNodeId()" style="display:none" class="tree">
+		#set ( $node.children = $child.getChildren())
+		#parse ("tree.vm")
+		</ul>
+	#end
+	</li>
+#end
+#end
